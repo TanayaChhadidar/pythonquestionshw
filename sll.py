@@ -16,3 +16,12 @@ class LinkedList:
         while temp:
             print(temp.data,end=" ")
             temp=temp.next
+
+list=LinkedList()
+n1=Node(10)
+n2=Node(20)
+n3=Node(30)
+list.append(n1)
+list.append(n2)
+list.append(n3)
+list.print()
