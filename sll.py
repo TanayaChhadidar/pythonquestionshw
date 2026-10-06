@@ -1,27 +1,42 @@
-#singly linear linked list
+#Singly linear linked list implementation in python
 class Node:
-    def __init__(self, value):
-        self.data = value
+    def __init__(self, data):
+        self.data = data
         self.next = None
-class LinkedList:
-    def __init__(self):
-        self.head=None
-    def append(self, new_node):
-            temp=self.head
-            while temp.next:
-                 temp=temp.next
-            temp.next=new_node #appending new node
-    def print(self):
-        temp=self.head
-        while temp:
-            print(temp.data,end=" ")
-            temp=temp.next
 
-list=LinkedList()
-n1=Node(10)
-n2=Node(20)
-n3=Node(30)
+
+class LinkList:
+    def __init__(self):
+        self.head = None
+    def append(self, new_node):
+        if self.head is None:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node #append new node at the end of the list            
+    def print(self):
+        temp = self.head
+        while temp:
+            print(temp.data)
+            temp=temp.next    
+    def count(self):
+        temp = self.head
+        count = 0
+        while temp:
+            if temp.data > 0:
+                count += 1
+            temp = temp.next
+        return count        
+            
+
+list = LinkList()
+n1 = Node(10)
+n2 = Node(-20)
+n3 = Node(30)
 list.append(n1)
 list.append(n2)
 list.append(n3)
 list.print()
+print("Number of nodes in the list:", list.count())
