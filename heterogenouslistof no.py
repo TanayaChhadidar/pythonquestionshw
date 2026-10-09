@@ -1,18 +1,8 @@
-#create a heterogenious list of nuimbers and names split the list from highest number
+a = [10, "Tanaya", 25, "Rahul", 40, "Priya"]
 
-my_list = [10, "Tanaya", 25, "Rahul", 15, "Priya", 40, "Amit"]
+highest = max(i for i in a if isinstance(i, int))
 
-numbers = [i for i in my_list if isinstance(i, int)]
+index = a.index(highest)
 
-highest = max(numbers)
-
-print("Original list:", my_list)
-print("Highest number:", highest)
-
-index = my_list.index(highest)
-
-list1 = my_list[:index]
-list2 = my_list[index:]
-
-print("First part:", list1)
-print("Second part:", list2)
+print(a[:index])
+print(a[index:])
